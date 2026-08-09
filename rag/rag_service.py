@@ -15,7 +15,10 @@ from langchain_core.prompts import PromptTemplate
 
 from model.factory import chat_model
 from rag.vector_store import VectorStoreService
+from utils.config_handler import chroma_conf
+from utils.file_handler import listdir_with_allowed_type, pdf_loader, txt_loader
 from utils.logger_handler import logger
+from utils.path_tool import get_abs_path
 from utils.prompt_loader import load_rag_prompts
 
 
@@ -51,9 +54,34 @@ class RagSummarizeService(object):
         scored.sort(key=lambda item: item[0], reverse=True)
         return [item[1] for item in scored[:limit]]
 
+    def _load_fallback_docs(self, query: str, limit: int = 3) -> List[Document]:
+        data_dir = get_abs_path(chroma_conf["data_path"])
+        allowed = tuple(chroma_conf["allow_knowledge_file_type"])
+        docs: List[Document] = []
+        for path in listdir_with_allowed_type(data_dir, allowed):
+            if path.endswith("txt"):
+                raw_docs = txt_loader(path)
+            elif path.endswith("pdf"):
+                raw_docs = pdf_loader(path)
+            else:
+                raw_docs = []
+            for raw_doc in raw_docs:
+                content = raw_doc.page_content or ""
+                if any(term in content for term in self._terms(query)):
+                    metadata = dict(raw_doc.metadata or {})
+                    metadata.update({"source": Path(path).name, "source_path": path})
+                    docs.append(Document(page_content=content, metadata=metadata))
+        return docs[:limit]
+
     def retriever_docs(self, query: str) -> List[Document]:
-        docs = self.vector_store.similarity_search(query, k=6)
-        return self._rerank(query, docs, limit=3)
+        try:
+            docs = self.vector_store.similarity_search(query, k=6)
+            docs = self._rerank(query, docs, limit=3)
+            if docs:
+                return docs
+        except Exception as exc:
+            logger.warning(f"[rag]向量检索失败，将使用本地文本兜底：{exc}")
+        return self._rerank(query, self._load_fallback_docs(query, limit=6), limit=3)
 
     def _build_context(self, docs: List[Document], max_chars: int = 2200) -> str:
         lines = []
@@ -68,7 +96,7 @@ class RagSummarizeService(object):
             if available <= 0:
                 break
             content = content[:available]
-            lines.append(f"[{counter}] {content}")
+            lines.append(f"[{counter}] 来源={source} 分片={chunk_index} 内容={content}")
             self.last_sources.append({"source": source, "chunk": chunk_index})
             total_chars += len(content)
         return "\n".join(lines)
