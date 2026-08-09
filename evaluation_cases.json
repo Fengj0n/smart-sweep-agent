@@ -1,0 +1,9 @@
+[
+  {"query": "今天西安天气", "expected_intent": "weather", "must_contain": "西安"},
+  {"query": "北京现在多少度", "expected_intent": "weather", "must_contain": "北京"},
+  {"query": "生成用户1004在2025年1月的月报", "expected_intent": "report", "must_contain": "1004"},
+  {"query": "查看用户1010最近三个月趋势", "expected_intent": "report", "must_contain": "趋势"},
+  {"query": "滚刷缠绕怎么处理", "expected_intent": "rag", "must_contain": ""},
+  {"query": "西安下雨天适合拖地吗", "expected_intent": "weather_advice", "must_contain": ""},
+  {"query": "生成用户1004在2025年1月的耗材建议报告", "expected_intent": "report_advice", "must_contain": "1004"}
+]

@@ -1,0 +1,205 @@
+<mxfile host="Electron" agent="Cursor">
+  <diagram id="overall-flow" name="整体输入输出流程">
+    <mxGraphModel dx="2413" dy="1423" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8FBFF;strokeColor=#D9E2F3;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="250" width="2300" x="25" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFDF5;strokeColor=#F1E2B8;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="280" width="2300" x="20" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F7FFF7;strokeColor=#CFE6CF;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="260" width="2300" x="20" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#D9D9D9;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="220" width="2300" x="20" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="20" parent="1" style="text;html=1;fontSize=18;fontStyle=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" value="1. 输入与前端" vertex="1">
+          <mxGeometry height="30" width="200" x="50" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="21" parent="1" style="text;html=1;fontSize=18;fontStyle=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" value="2. Agent 调度与工具选择" vertex="1">
+          <mxGeometry height="30" width="260" x="50" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="22" parent="1" style="text;html=1;fontSize=18;fontStyle=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" value="3. RAG / 外部数据 / 报告生成" vertex="1">
+          <mxGeometry height="30" width="280" x="50" y="605" as="geometry" />
+        </mxCell>
+        <mxCell id="23" parent="1" style="text;html=1;fontSize=18;fontStyle=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" value="4. 输出" vertex="1">
+          <mxGeometry height="30" width="100" x="50" y="885" as="geometry" />
+        </mxCell>
+        <mxCell id="101" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#4E79A7;strokeWidth=2;fontSize=15;fontStyle=1;" value="用户输入问题" vertex="1">
+          <mxGeometry height="80" width="160" x="80" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="102" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=2;fontSize=15;fontStyle=1;" value="app.py\nStreamlit 前端" vertex="1">
+          <mxGeometry height="90" width="190" x="310" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="103" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4CCCC;strokeColor=#CC0000;strokeWidth=2;fontSize=15;fontStyle=1;" value="ReactAgent\n智能调度核心" vertex="1">
+          <mxGeometry height="90" width="210" x="560" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="104" parent="1" style="shape=cloud;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;strokeWidth=2;fontSize=13;fontStyle=1;" value="middleware\n监控工具 / 日志 / 动态提示词" vertex="1">
+          <mxGeometry height="110" width="260" x="840" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="105" parent="1" style="shape=rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=2;fontSize=15;fontStyle=1;" value="是否需要工具？" vertex="1">
+          <mxGeometry height="100" width="190" x="1140" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="106" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2;fontSize=14;fontStyle=1;" value="直接生成回答" vertex="1">
+          <mxGeometry height="70" width="180" x="1400" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="107" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE5CD;strokeColor=#D79B00;strokeWidth=2;fontSize=14;fontStyle=1;" value="工具调用" vertex="1">
+          <mxGeometry height="70" width="180" x="1400" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="108" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;strokeWidth=2;fontSize=14;fontStyle=1;" value="工具层\nagent/tools/agent_tools.py" vertex="1">
+          <mxGeometry height="90" width="240" x="1660" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="109" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=2;fontSize=13;fontStyle=1;" value="rag_summarize\n知识库问答" vertex="1">
+          <mxGeometry height="70" width="170" x="1660" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="110" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=2;fontSize=11;fontStyle=1;" value="get_weather /\nget_user_location /\nget_user_id /\nget_current_month" vertex="1">
+          <mxGeometry height="110" width="230" x="1860" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="111" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=2;fontSize=13;fontStyle=1;" value="fetch_external_data" vertex="1">
+          <mxGeometry height="70" width="170" x="1660" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="112" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=2;fontSize=13;fontStyle=1;" value="fill_context_for_report\n触发报告模式" vertex="1">
+          <mxGeometry height="70" width="230" x="1860" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="120" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CFE2F3;strokeColor=#6FA8DC;strokeWidth=2;fontSize=14;fontStyle=1;" value="RAG 服务\nrag/rag_service.py" vertex="1">
+          <mxGeometry height="85" width="200" x="80" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="121" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CFE2F3;strokeColor=#6FA8DC;strokeWidth=2;fontSize=13;fontStyle=1;" value="VectorStoreService\n切分 / 去重 / 检索" vertex="1">
+          <mxGeometry height="85" width="230" x="330" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="122" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAD3;strokeColor=#82B366;strokeWidth=2;fontSize=13;fontStyle=1;" value="Retriever\n语义检索器" vertex="1">
+          <mxGeometry height="85" width="180" x="620" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="123" parent="1" style="shape=cylinder;whiteSpace=wrap;html=1;fillColor=#CFE2F3;strokeColor=#6FA8DC;strokeWidth=2;fontSize=14;fontStyle=1;" value="Chroma 向量库" vertex="1">
+          <mxGeometry height="95" width="190" x="850" y="675" as="geometry" />
+        </mxCell>
+        <mxCell id="124" parent="1" style="shape=document;whiteSpace=wrap;html=1;rounded=1;fillColor=#F5F5F5;strokeColor=#666666;strokeWidth=1.5;fontSize=12;fontStyle=1;" value="知识文档\ndata/*.txt / *.pdf" vertex="1">
+          <mxGeometry height="85" width="190" x="1080" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="125" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4CCCC;strokeColor=#CC0000;strokeWidth=2;fontSize=13;fontStyle=1;" value="PromptTemplate\n问题 + 参考资料" vertex="1">
+          <mxGeometry height="85" width="210" x="1310" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="126" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2;fontSize=13;fontStyle=1;" value="chat_model\n生成最终回答" vertex="1">
+          <mxGeometry height="85" width="180" x="1560" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="130" parent="1" style="shape=document;whiteSpace=wrap;html=1;rounded=1;fillColor=#F5F5F5;strokeColor=#666666;strokeWidth=1.5;fontSize=12;fontStyle=1;" value="配置层\nconfig/*.yml" vertex="1">
+          <mxGeometry height="75" width="170" x="80" y="965" as="geometry" />
+        </mxCell>
+        <mxCell id="131" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;strokeWidth=1.5;fontSize=12;fontStyle=1;" value="prompt_loader\n读取系统 / RAG / 报告提示词" vertex="1">
+          <mxGeometry height="85" width="240" x="290" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="132" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2;fontSize=12;fontStyle=1;" value="model/factory.py\nChatTongyi / DashScopeEmbeddings" vertex="1">
+          <mxGeometry height="85" width="250" x="580" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="133" parent="1" style="shape=document;whiteSpace=wrap;html=1;rounded=1;fillColor=#F5F5F5;strokeColor=#666666;strokeWidth=1.5;fontSize=12;fontStyle=1;" value="external_data/\n外部 CSV / 使用记录" vertex="1">
+          <mxGeometry height="75" width="190" x="870" y="965" as="geometry" />
+        </mxCell>
+        <mxCell id="134" parent="1" style="shape=cloud;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;strokeWidth=2;fontSize=12;fontStyle=1;" value="report_prompt_switch\n根据 runtime.context 切换提示词" vertex="1">
+          <mxGeometry height="90" width="250" x="1100" y="955" as="geometry" />
+        </mxCell>
+        <mxCell id="135" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#4E79A7;strokeWidth=2;fontSize=15;fontStyle=1;" value="流式输出" vertex="1">
+          <mxGeometry height="75" width="160" x="1980" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="136" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#4E79A7;strokeWidth=2;fontSize=14;fontStyle=1;" value="返回到前端页面" vertex="1">
+          <mxGeometry height="75" width="160" x="1980" y="965" as="geometry" />
+        </mxCell>
+        <mxCell id="140" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;strokeWidth=1.2;fontSize=12;" value="颜色说明\n蓝色：RAG / 向量库 / 输出\n黄色：入口与工具\n红色：Agent 与 Prompt\n绿色：模型\n紫色：中间件\n灰色：配置与文件" vertex="1">
+          <mxGeometry height="130" width="300" x="1510" y="965" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="101" style="endArrow=block;html=1;strokeWidth=2;" target="102">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="102" style="endArrow=block;html=1;strokeWidth=2;" target="103">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="103" style="endArrow=block;html=1;strokeWidth=2;" target="104">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="104" style="endArrow=block;html=1;strokeWidth=2;" target="105">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="105" style="endArrow=block;html=1;strokeWidth=2;" target="106">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="105" style="endArrow=block;html=1;strokeWidth=2;" target="107">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="103" style="endArrow=block;html=1;strokeWidth=2;" target="108">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="107" style="endArrow=block;html=1;strokeWidth=2;" target="108">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="108" style="endArrow=block;html=1;strokeWidth=2;" target="109">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="108" style="endArrow=block;html=1;strokeWidth=2;" target="110">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="108" style="endArrow=block;html=1;strokeWidth=2;" target="111">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="108" style="endArrow=block;html=1;strokeWidth=2;" target="112">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="109" style="endArrow=block;html=1;strokeWidth=2;" target="120">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="120" style="endArrow=block;html=1;strokeWidth=2;" target="121">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="121" style="endArrow=block;html=1;strokeWidth=2;" target="122">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="122" style="endArrow=block;html=1;strokeWidth=2;" target="123">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="124" style="endArrow=block;html=1;strokeWidth=2;dashed=1;" target="121">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="123" style="endArrow=block;html=1;strokeWidth=2;" target="125">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" edge="1" parent="1" source="125" style="endArrow=block;html=1;strokeWidth=2;" target="126">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" edge="1" parent="1" source="126" style="endArrow=block;html=1;strokeWidth=2;" target="135">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" edge="1" parent="1" source="112" style="endArrow=block;html=1;strokeWidth=2;dashed=1;" target="131">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" edge="1" parent="1" source="131" style="endArrow=block;html=1;strokeWidth=2;dashed=1;" target="132">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e23" edge="1" parent="1" source="111" style="endArrow=block;html=1;strokeWidth=2;dashed=1;" target="133">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e24" edge="1" parent="1" source="112" style="endArrow=block;html=1;strokeWidth=2;dashed=1;" target="134">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e25" edge="1" parent="1" source="134" style="endArrow=block;html=1;strokeWidth=2;dashed=1;" target="103">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e26" edge="1" parent="1" source="135" style="endArrow=block;html=1;strokeWidth=2;" target="136">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e27" edge="1" parent="1" source="130" style="endArrow=block;html=1;strokeWidth=1.5;dashed=1;" target="132">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e28" edge="1" parent="1" source="132" style="endArrow=block;html=1;strokeWidth=1.5;dashed=1;" target="121">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e29" edge="1" parent="1" source="132" style="endArrow=block;html=1;strokeWidth=1.5;dashed=1;" target="104">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e30" edge="1" parent="1" source="132" style="endArrow=block;html=1;strokeWidth=1.5;dashed=1;" target="108">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

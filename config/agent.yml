@@ -1,0 +1,7 @@
+external_data_path: data/external/records.csv
+default_user_id: "1001"
+default_city: "西安"
+max_history_turns: 8
+max_answer_chars: 1800
+weather_cache_seconds: 600
+rag_cache_size: 64
